@@ -52,6 +52,6 @@ public class StudentController {
 
     @GetMapping("/age/{age}")
     public Collection<Student> getStudentByAge(@PathVariable int age) {
-        return studentService.getStudentByAge(age);
+        return studentService.findByAge(age);
     }
 }

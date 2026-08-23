@@ -42,14 +42,14 @@ public class FacultyController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Faculty> deleteFaculty(@PathVariable long id) {
-        facultyService.deleteFaculty(id);
+    public ResponseEntity deleteFaculty(@PathVariable long id) {
+       facultyService.deleteFaculty(id);
         return ResponseEntity.ok().build()
 ;    }
 
     // Фильтрация факультетов по цвету
     @GetMapping("/color/{color}")
     public Collection<Faculty> getFacultiesByColor(@PathVariable String color) {
-        return facultyService.getFacultiesByColor(color);
+        return facultyService.findByColor(color);
     }
 }
